@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #222; /* Fundo escuro externo */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4; /* Fundo cinza claro principal */
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    border-image: linear-gradient(to right, #f06, #f90) 1;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.header-info {
+    margin-left: 15px;
+}
+
+.header-info h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header-info h1 a {
+    color: #007bff;
+}
+
+.header-info p {
+    margin: 0;
+    color: #555;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.stat-card .count {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.count.total,
+.count.concluido {
+    color: #007bff;
+}
+.count.reservado {
+    color: #ffc107;
+}
+.count.confirmado {
+    color: #28a745;
+}
+.count.cancelado {
+    color: #dc3545;
+}
+
+.manager-container {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.manager-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.manager-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.btn-create {
+    background-color: #111;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.btn-create:hover {
+    background-color: #333;
+}
+
+.tabs {
+    display: flex;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #555;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab:hover {
+    color: #000;
+}
+
+.tab.active {
+    color: #111;
+    border-bottom-color: #007bff;
+}
+
+.reservas-list {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.empty-state {
+    text-align: center;
+    color: #777;
+}
+
+.empty-state .fa-calendar-days {
+    font-size: 3rem; /* Tamanho do ícone */
+    color: #aaa;
+}
+
+.empty-state .empty-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+.empty-state .empty-link {
+    color: #007bff;
+    text-decoration: underline;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas Locais - Academia Power</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fa-solid fa-dumbbell"></i>
+        </div>
+        <div class="header-info">
+            <h1>Reservas Locais</h1>
+            <p>Lista de reservas salvas no navegador (localStorage)</p>
+        </div>
+    </header>
+
+    <main class="manager-container" style="margin-top:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h2>Reservas salvas</h2>
+            <div>
+                <a href="index.html" class="btn-create" style="margin-right:10px;">Criar nova reserva</a>
+                <button id="clear-all" class="btn-create" style="background:#dc3545;">Remover todas</button>
+            </div>
+        </div>
+
+        <div style="margin-top:15px;">
+            <table id="reservas-table" style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f1f1f1;text-align:left;">
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Idade</th>
+                        <th>Plano</th>
+                        <th>Atividade</th>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="reservas-body">
+                    <tr><td colspan="9" style="text-align:center;color:#777;padding:20px;">Carregando...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="reservas.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* --- Configurações Globais --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fundo cinza claro */
+}
+
+/* --- 1. Cabeçalho (Reutilizado da imagem) --- */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #007bff; /* Fundo azul do cabeçalho */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #007bff; /* Ícone azul */
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.header-info {
+    margin-left: 15px;
+}
+.header-info h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.header-info p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* --- 2. Container do Formulário --- */
+.form-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que a imagem não vaze */
+}
+
+/* --- Lado Esquerdo: Formulário --- */
+.reserva-form {
+    flex: 1; /* Ocupa metade do espaço */
+    padding: 30px;
+    background-color: #f0f2f5; /* Fundo cinza do formulário */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+    font-size: 1rem;
+}
+
+.form-group input[disabled] {
+    background-color: #e9ecef; /* Cor do campo 'Status' */
+    color: #555;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.half-width {
+    flex: 1; /* Cada campo ocupa metade da linha */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end; /* Alinha botões à direita */
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn-cancelar, .btn-criar {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-cancelar {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+.btn-cancelar:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-criar {
+    background-color: #111; /* Botão preto */
+    color: white;
+}
+.btn-criar:hover {
+    background-color: #333;
+}
+.btn-criar:active {
+    transform: scale(0.98); /* Efeito de clique */
+}
+
+/* --- Lado Direito: Imagem --- */
+.form-image {
+    flex: 1; /* Ocupa a outra metade */
+    background-image: url('https://images.unsplash.com/photo-1581009137042-c552e485697a'); /* Imagem de halteres */
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* Garante altura mínima */
+}
