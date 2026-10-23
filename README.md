@@ -97,6 +97,10 @@ Exemplo de corpo para `POST /api/reservas`:
 - [ ] Publicar a API online
 - [ ] Criar testes automatizados
 
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja o arquivo [LICENSE](LICENSE).
+
 ## 👤 Autor
 
 **Jarlisson Brito** — [GitHub](https://github.com/Jarlisson-cpu) · [LinkedIn](https://www.linkedin.com/in/jarlisson-brito-602909368/)
