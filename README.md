@@ -6,43 +6,47 @@ Sistema web para **reservar aulas em uma academia** (Spinning, Musculação, Yog
 
 ## ✨ Funcionalidades
 
-- 📝 Formulário de reserva com nome, CPF, idade, plano, atividade, data e horário
-- ⚠️ Verificação de disponibilidade: avisa quando o horário já está reservado
-- 📋 Página com a lista de todas as reservas feitas
-- 🗑️ Cancelamento (exclusão) de reservas
+- 🗓️ Grade de aulas (Spinning, Musculação, Yoga, Funcional) com **vagas em tempo real** por dia
+- 🚦 Limite de vagas por aula: aulas lotadas aparecem como esgotadas e a API recusa novas reservas
+- 📝 Formulário em etapas com máscara e validação de CPF, resumo da reserva e notificações
+- 🚫 Impede reservas em datas passadas e reservas duplicadas do mesmo aluno na mesma aula
+- 📋 Painel de reservas com estatísticas, busca por nome/CPF e filtros por aula e período
+- 🔒 CPF mascarado na listagem e dados escapados contra injeção de HTML
+- 📱 Layout responsivo com tema escuro
 - 🔌 API REST com respostas em JSON e tratamento de erros
 
 ## 🔌 Endpoints da API
 
 | Método | Rota | Descrição |
 |---|---|---|
+| `GET` | `/api/aulas?data=AAAA-MM-DD` | Lista as aulas e as vagas restantes no dia |
 | `GET` | `/api/reservas` | Lista todas as reservas |
-| `POST` | `/api/reservas` | Cria uma reserva (`aula_id`, `data` e `horario` obrigatórios) |
+| `POST` | `/api/reservas` | Cria uma reserva (`nome`, `cpf`, `idade`, `plano`, `aula_id`, `data`) |
 | `DELETE` | `/api/reservas/<id>` | Remove uma reserva |
 
 ## 📁 Estrutura
 
 ```
-├── api.py              # API Flask (rotas /api/reservas)
-├── database.py         # Cria o banco e insere dados de teste
-├── index.html          # Formulário de nova reserva
-├── criar_reserva.js    # Envio do formulário e checagem de conflitos
-├── reservas.html       # Lista de reservas
-├── reservas.js         # Busca e exibe as reservas da API
-├── script.js
-├── style.css / form_style.css
-└── academia.db         # Banco SQLite
+├── api.py              # API Flask (rotas /api) e servidor do front-end
+├── database.py         # Cria o banco SQLite e a grade de aulas
+├── requirements.txt
+└── static/
+    ├── index.html      # Nova reserva
+    ├── criar_reserva.js
+    ├── reservas.html   # Painel de reservas
+    ├── reservas.js
+    ├── common.js       # Funções compartilhadas (API, CPF, notificações)
+    └── styles.css
 ```
 
 ## 🚀 Como executar
 
 ```bash
-pip install flask flask-cors
-python database.py   # (opcional) cria tabelas e dados de teste
-python api.py        # API em http://127.0.0.1:5000
+pip install -r requirements.txt
+python api.py        # cria o banco e sobe o site em http://127.0.0.1:5000
 ```
 
-Depois abra o `index.html` no navegador.
+Depois abra **http://127.0.0.1:5000** no navegador.
 
 ## 🧠 Conceitos praticados
 
@@ -50,7 +54,7 @@ API REST · CRUD · Flask · SQLite · `fetch` assíncrono · CORS · validaçã
 
 ## 🔮 Melhorias futuras
 
-- [ ] Limitar reservas pelo número de vagas de cada aula
+- [x] Limitar reservas pelo número de vagas de cada aula
 - [ ] Login de alunos
 - [ ] Publicar o front-end e a API online
 

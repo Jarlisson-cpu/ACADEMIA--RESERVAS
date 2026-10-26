@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Reserva - Academia Power</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span>
+        <span class="brand-text">Academia <span>Power</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active"><i class="fa-solid fa-plus"></i> Nova reserva</a>
+        <a href="reservas.html"><i class="fa-solid fa-list"></i> Reservas</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Garanta sua vaga.<br /><em>Treine sem fila.</em></h1>
+        <p>Escolha o dia e a aula, veja as vagas em tempo real e confirme sua reserva em segundos.</p>
+      </section>
+
+      <form id="reservation-form" class="booking-grid" novalidate>
+        <div class="card">
+          <!-- Passo 1: aula -->
+          <div class="step">
+            <h2 class="step-title"><span class="step-number">1</span> Escolha o dia e a aula</h2>
+            <div class="form-group">
+              <label for="data">Data</label>
+              <input type="date" id="data" required />
+            </div>
+            <div class="class-filter" id="class-filter" role="group" aria-label="Filtrar modalidade"></div>
+            <div class="class-grid" id="class-grid" role="radiogroup" aria-label="Aulas disponíveis">
+              <p class="hint">Carregando aulas...</p>
+            </div>
+          </div>
+
+          <!-- Passo 2: aluno -->
+          <div class="step">
+            <h2 class="step-title"><span class="step-number">2</span> Dados do aluno</h2>
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" placeholder="Ex: Maria da Silva" autocomplete="name" required />
+              <small class="field-error" data-for="nome"></small>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" placeholder="000.000.000-00" inputmode="numeric" maxlength="14" required />
+                <small class="field-error" data-for="cpf"></small>
+              </div>
+              <div class="form-group">
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" min="12" max="120" placeholder="Ex: 30" required />
+                <small class="field-error" data-for="idade"></small>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Plano</label>
+              <div class="segmented">
+                <input type="radio" name="plano" id="plano-mensal" value="Mensal" checked />
+                <label for="plano-mensal">Mensal<small>Sem fidelidade</small></label>
+                <input type="radio" name="plano" id="plano-trimestral" value="Trimestral" />
+                <label for="plano-trimestral">Trimestral<small>3 meses</small></label>
+                <input type="radio" name="plano" id="plano-anual" value="Anual" />
+                <label for="plano-anual">Anual<small>Melhor preço</small></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo -->
+        <aside class="card summary">
+          <h3>Resumo da reserva</h3>
+          <dl>
+            <dt>Aula</dt><dd id="resumo-aula">—</dd>
+            <dt>Data</dt><dd id="resumo-data">—</dd>
+            <dt>Horário</dt><dd id="resumo-horario">—</dd>
+            <dt>Vagas restantes</dt><dd id="resumo-vagas">—</dd>
+            <dt>Plano</dt><dd id="resumo-plano">Mensal</dd>
+          </dl>
+          <button type="submit" class="btn btn-primary btn-block" id="btn-submit" disabled>
+            <i class="fa-solid fa-check"></i> Confirmar reserva
+          </button>
+          <p class="hint" id="submit-hint" style="margin: 10px 0 0; text-align: center">Selecione uma aula para continuar.</p>
+        </aside>
+      </form>
+    </main>
+
+    <script src="common.js"></script>
+    <script src="criar_reserva.js"></script>
+  </body>
+</html>

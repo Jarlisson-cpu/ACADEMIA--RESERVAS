@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservas - Academia Power</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <span class="brand-icon"><i class="fa-solid fa-dumbbell"></i></span>
+        <span class="brand-text">Academia <span>Power</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html"><i class="fa-solid fa-plus"></i> Nova reserva</a>
+        <a href="reservas.html" class="active"><i class="fa-solid fa-list"></i> Reservas</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h1 class="page-title">Reservas</h1>
+      <p class="page-subtitle">Acompanhe e gerencie as reservas de aulas da academia.</p>
+
+      <div class="alert" id="api-alert">
+        <i class="fa-solid fa-plug-circle-xmark"></i>
+        <span>Não foi possível conectar ao servidor. Verifique se a API está rodando (<code>python api.py</code>).</span>
+      </div>
+
+      <section class="stats">
+        <div class="card stat"><p>Total de reservas</p><strong id="stat-total">0</strong></div>
+        <div class="card stat"><p>Hoje</p><strong id="stat-hoje" class="accent">0</strong></div>
+        <div class="card stat"><p>Próximas</p><strong id="stat-proximas">0</strong></div>
+        <div class="card stat"><p>Aula mais procurada</p><strong id="stat-top" style="font-size: 1.3rem">—</strong></div>
+      </section>
+
+      <section class="card">
+        <div class="toolbar">
+          <input type="search" id="busca" placeholder="Buscar por nome ou CPF..." aria-label="Buscar" />
+          <select id="filtro-aula" aria-label="Filtrar por aula">
+            <option value="">Todas as aulas</option>
+          </select>
+          <select id="filtro-periodo" aria-label="Filtrar por período">
+            <option value="proximas">Próximas</option>
+            <option value="hoje">Hoje</option>
+            <option value="passadas">Passadas</option>
+            <option value="">Todas</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>CPF</th>
+                <th>Idade</th>
+                <th>Plano</th>
+                <th>Aula</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="reservas-body">
+              <tr><td colspan="9" class="empty-state">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="common.js"></script>
+    <script src="reservas.js"></script>
+  </body>
+</html>
